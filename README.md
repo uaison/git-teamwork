@@ -31,11 +31,11 @@
 6. 将master分支合并到当前分支 `git merge master`
 
 7. 分支重命名
-```
-git branch -m oldDev newDev
-git push --delete origin oldDev
-git push origin newDev
-git branch --set-upstream-to=origin/newDev
+```bash
+git branch -m oldDev newDev # 重命名
+git push --delete origin oldDev # 删除远程旧分支
+git push origin newDev # 提交新分支到远程仓库
+git branch --set-upstream-to=origin/newDev # 设置本地新分支与远程新分支关联
 ```
 
 
@@ -55,10 +55,19 @@ git branch --set-upstream-to=origin/newDev
 
 1. 克隆远端dev分支 `git clone -b dev git@github.com:uaison/git-teamwork.git`
 
-2. 提交前获取最新代码 `git pull`
+2. 查看本地仓库的当前状态 `git status`
 
-3. 添加修改内容到git源码 `git add .`
+3. 常看当前项目的具体修改内容 `git diff`
 
-4. 提交修改内容到缓存区 `git commit -m "commit message"`
+4. 保存当前的工作进度，会把暂存区和工作区的改动保存起来 `git stash`
 
-5. 修改推送到远程仓库 `git push`
+5. 提交前获取最新代码 `git pull`
+
+6. 添加修改内容到git源码 `git add .`
+
+7. 提交修改内容到缓存区 `git commit -m "commit message"`
+
+8. 修改推送到远程仓库 `git push`
+
+9. 恢复最新的进度到工作区，这个过程会合并git pull到本地的远程仓库中的代码，这个过程可能会有冲突警告 `git stash pop`
+
